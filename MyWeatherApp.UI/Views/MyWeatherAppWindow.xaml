@@ -1,0 +1,67 @@
+﻿<Window x:Class="MyWeatherApp.UI.Views.MyWeatherAppWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWeatherApp.UI.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="20">
+            <TextBlock Text="Type the city name:"/>
+            <TextBox
+                Text="{Binding Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                />
+            <Button Margin="0,10"
+                    Content="Search"
+                    CommandParameter="{Binding}"
+                    Command="{Binding SearchCitiesCommand}"
+                    />
+            <!--Turno into Table-->
+            <ListView ItemsSource="{Binding Cities}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="2"/>
+                            <TextBlock Grid.Column="1" Text="-" Margin="2"/>
+                            <TextBlock Grid.Column="2" Text="{Binding AdministrativeArea}" Margin="2"/>
+                            <TextBlock Grid.Column="3" Text="-" Margin="2"/>
+                            <TextBlock Grid.Column="4" Text="{Binding Country}" Margin="2"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"                       
+                       Foreground="#f4f4f8"
+                       FontSize="30"
+                       Margin="20,0"/>
+        <Grid Grid.Row="1"
+              Background="#4392f1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="0,10">
+            </StackPanel>
+            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Foreground="#f4f4f8"
+                       FontSize="30"
+                       Margin="20,0"/>
+        </Grid>
+    </Grid>
+</Window>
