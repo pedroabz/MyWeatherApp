@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Infrastructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Infrastructure.Tests", "MyWeatherApp.Infrastructure.Tests\MyWeatherApp.Infrastructure.Tests.csproj", "{BB760B94-AA85-4CBE-B738-3091017C89E6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{741E2F94-7968-4779-8D65-037D648BBD77} = {798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}
+		{BB760B94-AA85-4CBE-B738-3091017C89E6} = {798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85E0F579-4C6E-4E81-96C6-CD1508596008}

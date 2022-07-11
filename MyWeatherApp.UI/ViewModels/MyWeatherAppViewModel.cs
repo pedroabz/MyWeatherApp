@@ -30,14 +30,10 @@ namespace MyWeatherApp.UI.ViewModels
 
         public SearchCitiesCommand SearchCitiesCommand { get; set; }
 
-        public MyWeatherAppViewModel()
+        public MyWeatherAppViewModel(SearchCitiesCommand searchCitiesCommand)
         {
             _cities = new ObservableCollection<City>();
-            IWeatherApiHelper weatherApiHelper = new WeatherApiHelper();
-            ILocationsService locationsServices = new LocationsService(weatherApiHelper);
-
-            SearchCitiesCommand = new SearchCitiesCommand(locationsServices);
-            locationsServices.GetLocations(Query);
+            SearchCitiesCommand = searchCitiesCommand;           
         }
 
         public void SetCities(List<City> cities)

@@ -1,4 +1,6 @@
-﻿using MyWeatherApp.UI.ViewModels;
+﻿using MyWeatherApp.Infrastructure.ApiHelpers;
+using MyWeatherApp.UI.Commands;
+using MyWeatherApp.UI.ViewModels;
 using System.Windows;
 
 namespace MyWeatherApp.UI.Views
@@ -8,9 +10,9 @@ namespace MyWeatherApp.UI.Views
     /// </summary>
     public partial class MyWeatherAppWindow : Window
     {
-        public MyWeatherAppWindow()
+        public MyWeatherAppWindow(SearchCitiesCommand searchCitiesCommand)
         {
-            DataContext = new MyWeatherAppViewModel();
+            DataContext = new MyWeatherAppViewModel(searchCitiesCommand);
             InitializeComponent();
         }
     }
