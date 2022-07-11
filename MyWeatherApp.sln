@@ -7,15 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.UI", "MyWeathe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Application", "MyWeatherApp.Application\MyWeatherApp.Application.csproj", "{16C5A4F1-6D74-4163-BB45-43C957A7E6D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Application.Tests", "MyWeatherApp.Application.Tests\MyWeatherApp.Application.Tests.csproj", "{741E2F94-7968-4779-8D65-037D648BBD77}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Domain", "MyWeatherApp.Domain\MyWeatherApp.Domain.csproj", "{2E5196A1-A260-45C3-83B7-CE1D450BC88F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Infrastructure", "MyWeatherApp.Infrastructure\MyWeatherApp.Infrastructure.csproj", "{DFF17E0C-4D66-4632-B585-4A009A2F8D41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Infrastructure.Tests", "MyWeatherApp.Infrastructure.Tests\MyWeatherApp.Infrastructure.Tests.csproj", "{BB760B94-AA85-4CBE-B738-3091017C89E6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Application.Tests", "tests\MyWeatherApp.Application.Tests\MyWeatherApp.Application.Tests.csproj", "{CD471A9D-A1B2-40FB-B197-486A2D78A26B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeatherApp.Infrastructure.Tests", "tests\MyWeatherApp.Infrastructure.Tests\MyWeatherApp.Infrastructure.Tests.csproj", "{4A8D4958-2DED-4DD4-AEE5-B163C9538556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,6 @@ Global
 		{16C5A4F1-6D74-4163-BB45-43C957A7E6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C5A4F1-6D74-4163-BB45-43C957A7E6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C5A4F1-6D74-4163-BB45-43C957A7E6D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{741E2F94-7968-4779-8D65-037D648BBD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{741E2F94-7968-4779-8D65-037D648BBD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{741E2F94-7968-4779-8D65-037D648BBD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{741E2F94-7968-4779-8D65-037D648BBD77}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E5196A1-A260-45C3-83B7-CE1D450BC88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E5196A1-A260-45C3-83B7-CE1D450BC88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E5196A1-A260-45C3-83B7-CE1D450BC88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,17 +39,21 @@ Global
 		{DFF17E0C-4D66-4632-B585-4A009A2F8D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFF17E0C-4D66-4632-B585-4A009A2F8D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFF17E0C-4D66-4632-B585-4A009A2F8D41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB760B94-AA85-4CBE-B738-3091017C89E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB760B94-AA85-4CBE-B738-3091017C89E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB760B94-AA85-4CBE-B738-3091017C89E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB760B94-AA85-4CBE-B738-3091017C89E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD471A9D-A1B2-40FB-B197-486A2D78A26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD471A9D-A1B2-40FB-B197-486A2D78A26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD471A9D-A1B2-40FB-B197-486A2D78A26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD471A9D-A1B2-40FB-B197-486A2D78A26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8D4958-2DED-4DD4-AEE5-B163C9538556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8D4958-2DED-4DD4-AEE5-B163C9538556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8D4958-2DED-4DD4-AEE5-B163C9538556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8D4958-2DED-4DD4-AEE5-B163C9538556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{741E2F94-7968-4779-8D65-037D648BBD77} = {798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}
-		{BB760B94-AA85-4CBE-B738-3091017C89E6} = {798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}
+		{CD471A9D-A1B2-40FB-B197-486A2D78A26B} = {798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}
+		{4A8D4958-2DED-4DD4-AEE5-B163C9538556} = {798CDA30-BFC6-44AF-8D38-C1E905A7C9BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85E0F579-4C6E-4E81-96C6-CD1508596008}

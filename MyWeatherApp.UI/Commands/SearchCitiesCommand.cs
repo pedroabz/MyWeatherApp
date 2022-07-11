@@ -2,22 +2,31 @@
 using MyWeatherApp.UI.ViewModels;
 using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MyWeatherApp.UI.Commands
 {
-    public class SearchCitiesCommand : System.Windows.Input.ICommand
+    public class SearchCitiesCommand : ICommand
     {
         private ILocationsService _locationsService;
-
-        public event EventHandler? CanExecuteChanged;
+      
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
         public SearchCitiesCommand(ILocationsService locationsService)
         {
             _locationsService = locationsService;
         }
 
-        public bool CanExecute(object? parameter)
+        public bool CanExecute(object parameter)
         {
+            var viewModel = (MyWeatherAppViewModel)parameter;
+
+            if (string.IsNullOrWhiteSpace(viewModel?.Query))
+                return false;
             return true;
         }
         public void Execute(object parameter)

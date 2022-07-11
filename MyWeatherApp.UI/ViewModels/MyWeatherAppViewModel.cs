@@ -1,6 +1,4 @@
-﻿using MyWeatherApp.Application.Services;
-using MyWeatherApp.Domain.Models;
-using MyWeatherApp.Infrastructure.ApiHelpers;
+﻿using MyWeatherApp.Domain.Models;
 using MyWeatherApp.UI.Commands;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,7 +15,10 @@ namespace MyWeatherApp.UI.ViewModels
         public string Query
         {
             get { return _query; }
-            set { _query = value; }
+            set {
+                _query = value; 
+                OnPropertyChanged(nameof(Query));
+            }
         }
 
         private ObservableCollection<City> _cities;
@@ -43,6 +44,11 @@ namespace MyWeatherApp.UI.ViewModels
             {
                 _cities.Add(city);
             }
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

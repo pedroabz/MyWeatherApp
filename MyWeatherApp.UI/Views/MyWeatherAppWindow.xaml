@@ -18,31 +18,24 @@
                 Text="{Binding Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 />
             <Button Margin="0,10"
-                    Content="Search"
-                    CommandParameter="{Binding}"
                     Command="{Binding SearchCitiesCommand}"
+                    CommandParameter="{Binding}"
+                    Content="Search"
                     />
-            <!--Turno into Table-->
-            <ListView ItemsSource="{Binding Cities}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="2"/>
-                            <TextBlock Grid.Column="1" Text="-" Margin="2"/>
-                            <TextBlock Grid.Column="2" Text="{Binding AdministrativeArea}" Margin="2"/>
-                            <TextBlock Grid.Column="3" Text="-" Margin="2"/>
-                            <TextBlock Grid.Column="4" Text="{Binding Country}" Margin="2"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <ScrollViewer
+                      HorizontalScrollBarVisibility="Hidden"
+                      VerticalScrollBarVisibility="Hidden">
+                <DataGrid ItemsSource="{Binding Cities}"                    
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    CanUserResizeColumns="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="       City" MinWidth="115" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Administrative Area" MinWidth="120" Binding="{Binding AdministrativeArea}"/>
+                        <DataGridTextColumn Header="       Country" MinWidth="115" Binding="{Binding Country}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
         </StackPanel>
         <TextBlock Grid.Column="1"
                        VerticalAlignment="Center"                       
